@@ -1,0 +1,34 @@
+$ mvn test
+
+[INFO] Scanning for projects...
+[INFO]   from pom.xml
+[INFO] Compiling 5 source files with javac [debug release 21] to target/classes
+[INFO] Compiling 1 source file with javac [debug release 21] to target/test-classes
+[INFO]  T E S T S
+[INFO] Running dev.codewithsam.refunds.RefundPolicyTest
+[ERROR] Tests run: 7, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.040 s <<< FAILURE! -- in dev.codewithsam.refunds.RefundPolicyTest
+[ERROR] dev.codewithsam.refunds.RefundPolicyTest.sameKeyRefundsOnce -- Time elapsed: 0.003 s <<< ERROR!
+dev.codewithsam.refunds.RefundRejected: refund 6000 exceeds refundable 4000 on ord_8812
+	at dev.codewithsam.refunds.RefundPolicy.refund(RefundPolicy.java:31)
+	at dev.codewithsam.refunds.RefundPolicyTest.sameKeyRefundsOnce(RefundPolicyTest.java:105)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+[INFO] Results:
+[ERROR] Errors: 
+[ERROR]   RefundPolicyTest.sameKeyRefundsOnce:105 » RefundRejected refund 6000 exceeds refundable 4000 on ord_8812
+[ERROR] Tests run: 7, Failures: 0, Errors: 1, Skipped: 0
+[INFO] BUILD FAILURE
+[INFO] Total time:  1.069 s
+[INFO] Finished at: 2026-09-15T04:07:02+02:00
+[ERROR] 
+[ERROR] See ./target/surefire-reports for the individual test results.
+[ERROR] See dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

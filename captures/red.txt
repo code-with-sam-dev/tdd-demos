@@ -1,0 +1,121 @@
+$ mvn test
+
+[INFO] Scanning for projects...
+[INFO]   from pom.xml
+[INFO] Compiling 5 source files with javac [debug release 21] to target/classes
+[INFO] Compiling 1 source file with javac [debug release 21] to target/test-classes
+[INFO]  T E S T S
+[INFO] Running dev.codewithsam.refunds.RefundPolicyTest
+[ERROR] Tests run: 7, Failures: 4, Errors: 3, Skipped: 0, Time elapsed: 0.035 s <<< FAILURE! -- in dev.codewithsam.refunds.RefundPolicyTest
+[ERROR] dev.codewithsam.refunds.RefundPolicyTest.refusesNonPositive -- Time elapsed: 0.014 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown, expected: <dev.codewithsam.refunds.RefundRejected> but was: <java.lang.UnsupportedOperationException>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:67)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3128)
+	at dev.codewithsam.refunds.RefundPolicyTest.refusesNonPositive(RefundPolicyTest.java:65)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: java.lang.UnsupportedOperationException: not implemented yet
+	at dev.codewithsam.refunds.RefundPolicy.refund(RefundPolicy.java:6)
+	at dev.codewithsam.refunds.RefundPolicyTest.lambda$refusesNonPositive$2(RefundPolicyTest.java:66)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:53)
+	... 6 more
+
+[ERROR] dev.codewithsam.refunds.RefundPolicyTest.failedAttemptsDoNotConsumeBalance -- Time elapsed: 0.002 s <<< ERROR!
+java.lang.UnsupportedOperationException: not implemented yet
+	at dev.codewithsam.refunds.RefundPolicy.refund(RefundPolicy.java:6)
+	at dev.codewithsam.refunds.RefundPolicyTest.failedAttemptsDoNotConsumeBalance(RefundPolicyTest.java:93)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+[ERROR] dev.codewithsam.refunds.RefundPolicyTest.refusesUncaptured -- Time elapsed: 0.001 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown, expected: <dev.codewithsam.refunds.RefundRejected> but was: <java.lang.UnsupportedOperationException>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:67)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3128)
+	at dev.codewithsam.refunds.RefundPolicyTest.refusesUncaptured(RefundPolicyTest.java:54)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: java.lang.UnsupportedOperationException: not implemented yet
+	at dev.codewithsam.refunds.RefundPolicy.refund(RefundPolicy.java:6)
+	at dev.codewithsam.refunds.RefundPolicyTest.lambda$refusesUncaptured$1(RefundPolicyTest.java:55)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:53)
+	... 6 more
+
+[ERROR] dev.codewithsam.refunds.RefundPolicyTest.refundsWithinCapture -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.UnsupportedOperationException: not implemented yet
+	at dev.codewithsam.refunds.RefundPolicy.refund(RefundPolicy.java:6)
+	at dev.codewithsam.refunds.RefundPolicyTest.refundsWithinCapture(RefundPolicyTest.java:32)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+[ERROR] dev.codewithsam.refunds.RefundPolicyTest.refusesMoreThanCaptured -- Time elapsed: 0.001 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown, expected: <dev.codewithsam.refunds.RefundRejected> but was: <java.lang.UnsupportedOperationException>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:67)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3128)
+	at dev.codewithsam.refunds.RefundPolicyTest.refusesMoreThanCaptured(RefundPolicyTest.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: java.lang.UnsupportedOperationException: not implemented yet
+	at dev.codewithsam.refunds.RefundPolicy.refund(RefundPolicy.java:6)
+	at dev.codewithsam.refunds.RefundPolicyTest.lambda$refusesMoreThanCaptured$0(RefundPolicyTest.java:44)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:53)
+	... 6 more
+
+[ERROR] dev.codewithsam.refunds.RefundPolicyTest.refusesSecondRefundBeyondRemaining -- Time elapsed: 0.001 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown, expected: <dev.codewithsam.refunds.RefundRejected> but was: <java.lang.UnsupportedOperationException>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:67)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3128)
+	at dev.codewithsam.refunds.RefundPolicyTest.refusesSecondRefundBeyondRemaining(RefundPolicyTest.java:81)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: java.lang.UnsupportedOperationException: not implemented yet
+	at dev.codewithsam.refunds.RefundPolicy.refund(RefundPolicy.java:6)
+	at dev.codewithsam.refunds.RefundPolicyTest.lambda$refusesSecondRefundBeyondRemaining$3(RefundPolicyTest.java:82)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:53)
+	... 6 more
+
+[ERROR] dev.codewithsam.refunds.RefundPolicyTest.sameKeyRefundsOnce -- Time elapsed: 0 s <<< ERROR!
+java.lang.UnsupportedOperationException: not implemented yet
+	at dev.codewithsam.refunds.RefundPolicy.refund(RefundPolicy.java:6)
+	at dev.codewithsam.refunds.RefundPolicyTest.sameKeyRefundsOnce(RefundPolicyTest.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+[INFO] Results:
+[ERROR] Failures: 
+[ERROR]   RefundPolicyTest.refusesMoreThanCaptured:43 Unexpected exception type thrown, expected: <dev.codewithsam.refunds.RefundRejected> but was: <java.lang.UnsupportedOperationException>
+[ERROR]   RefundPolicyTest.refusesNonPositive:65 Unexpected exception type thrown, expected: <dev.codewithsam.refunds.RefundRejected> but was: <java.lang.UnsupportedOperationException>
+[ERROR]   RefundPolicyTest.refusesSecondRefundBeyondRemaining:81 Unexpected exception type thrown, expected: <dev.codewithsam.refunds.RefundRejected> but was: <java.lang.UnsupportedOperationException>
+[ERROR]   RefundPolicyTest.refusesUncaptured:54 Unexpected exception type thrown, expected: <dev.codewithsam.refunds.RefundRejected> but was: <java.lang.UnsupportedOperationException>
+[ERROR] Errors: 
+[ERROR]   RefundPolicyTest.failedAttemptsDoNotConsumeBalance:93 » UnsupportedOperation not implemented yet
+[ERROR]   RefundPolicyTest.refundsWithinCapture:32 » UnsupportedOperation not implemented yet
+[ERROR]   RefundPolicyTest.sameKeyRefundsOnce:104 » UnsupportedOperation not implemented yet
+[ERROR] Tests run: 7, Failures: 4, Errors: 3, Skipped: 0
+[INFO] BUILD FAILURE
+[INFO] Total time:  1.042 s
+[INFO] Finished at: 2026-09-15T04:06:56+02:00
+[ERROR] 
+[ERROR] See ./target/surefire-reports for the individual test results.
+[ERROR] See dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
